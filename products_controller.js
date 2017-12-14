@@ -7,7 +7,7 @@ module.exports = {
             .then(response => {
                 return res.status(200).json(response);
             })
-            .catch(console.log);
+            .catch(() => res.status(500).send());
     },
     getOne(req, res) {
         const db = req.app.get("db");
@@ -17,7 +17,7 @@ module.exports = {
             .then(product => {
                 return res.status(200).json(product);
             })
-            .catch(console.log);
+            .catch(() => res.status(500).send());
     },
     getAll(req, res) {
         const db = req.app.get("db");
@@ -26,7 +26,7 @@ module.exports = {
             .then(products => {
                 return res.status(200).json(products);
             })
-            .catch(console.log);
+            .catch(() => res.status(500).send());
     },
     update(req, res) {
         const db = req.app.get("db");
@@ -37,7 +37,7 @@ module.exports = {
             .then(response => {
                 return res.status(200).json(response);
             })
-            .catch(console.log);
+            .catch(() => res.status(500).send());
     },
     delete(req, res) {
         const db = req.app.get("db");
@@ -47,6 +47,6 @@ module.exports = {
             .then(response => {
                 return res.status(200).json(response);
             })
-            .catch(console.log);
+            .catch(() => res.status(500).send());
     }
 };
